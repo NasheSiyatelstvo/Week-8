@@ -1,0 +1,125 @@
+
+.main {
+    margin: 30px;
+    font-size: 22px;
+    font-family: sans-serif;
+    color: #121111;
+    display: grid;
+    grid-template-columns: 2fr 2fr; 
+    grid-gap: 5px;
+    grid-template-rows: repeat(6, auto);
+    background-image: url('assets/illustration.png'); 
+    background-size: 50%; 
+    background-repeat: no-repeat; 
+    background-position: right; 
+}
+
+.mainwrap__item {
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.main__title {
+    font-weight: 900;
+}
+
+.mainwrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+}
+
+.header, .main {
+    grid-column: span 2;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.main__content {
+    padding: 20px;
+}
+
+.nav__item {
+    text-decoration: none;
+    color: black;
+    margin: 0 10px; /* Добавляем отступы между элементами навигации */
+}
+
+.main__button img {
+    width: 20%;
+}
+
+.main__text {
+    font-size: 18px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__nav {
+    margin-left: 50px;
+}
+
+.main__content:nth-child(4) {
+    grid-column: 3/4;
+    grid-row: 1/3;
+}
+
+.main__content:nth-child(-n+3) {
+    grid-column: 1;
+}
+
+@media (max-width: 1024px) {
+    .mainwrap {
+        grid-template-columns: 1fr;
+    }
+    
+    .header, .main {
+        grid-column: span 1;
+    }
+
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .main__content:nth-child(4) {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .main__content:nth-child(-n+3) {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 599px) {
+    .header {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .header__nav {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center; 
+        align-items: center;
+        margin-top: 20px; 
+    }
+
+    .nav {
+        justify-content: center; 
+        align-items: center; 
+    }
+
+    .nav__item {
+        margin: 10px 20; 
+    }
+}
